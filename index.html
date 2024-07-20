@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700" rel="stylesheet">
+<link rel=stylesheet href="https://huntingstats378.github.io/HuntingStats378/main/assets/ess/odometer.css">
+<script src="https://huntingstats378.github.io/HuntingStats378/main/assets/ess/odometer.js"></script>
+</head>
+<body>
+    <span id="count" class="odometer">0</span>
+</body>
+<style>
+    body {
+        font-family: roboto;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 700;
+    }
+</style>
+<script>
+    setInterval(() => {
+        fetch(
+                `https://api.communitrics.com/UC-lHJZR3Gqxm24_Vd_AJ5Yw?averages=true`
+            )
+            .then((res) => res.json())
+            .then((data) => {
+                document.getElementById("count").innerHTML = data.channelDetails.linearEstSubscriberCount;
+            });
+    }, 2000);
+</script>
