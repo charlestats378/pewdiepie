@@ -14,9 +14,12 @@
     }
 </style>
 <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id") || "UC-lHJZR3Gqxm24_Vd_AJ5Yw";
+    
     setInterval(() => {
         fetch(
-                `https://api.communitrics.com/UC-lHJZR3Gqxm24_Vd_AJ5Yw?averages=true`
+                `https://api.communitrics.com/${id}?averages=true`
             )
             .then((res) => res.json())
             .then((data) => {
