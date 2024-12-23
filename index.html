@@ -19,7 +19,7 @@
     
     setInterval(() => {
         fetch(
-                `https://api.communitrics.com/${id}?averages=true`
+                `https://api.communitrics.com/${id}?averages=true&rehits=true`
             )
             .then((res) => res.json())
             .then((data) => {
